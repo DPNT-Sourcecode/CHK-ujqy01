@@ -2,9 +2,9 @@ from solutions.CHK import checkout_solution
 
 
 class TestCheckout():
-    def test_checkout(self):
-        SKUs = 'A B C'
-        expected_price = 50 + 30 + 20
+    def test_checkout_no_offers(self):
+        SKUs = 'D C'
+        expected_price = 15 + 20
         assert checkout_solution.checkout(SKUs) == expected_price
 
     def test_checkout_with_offers(self):

@@ -28,12 +28,15 @@ def checkout(skus):
             if price_list_item.get('on_offer'):
                 on_offer_items_count = skus.count(sku)
                 price = on_offer_items_count / price_list_item.get('offer_quantity') * price_list_item.get('offer_price') + on_offer_items_count%price_list_item.get('offer_quantity') * price_list_item.get('price')
+                list(filter(lambda a: a != sku, skus))
+            else:
+                price = price_list_item.get('price')
 
-                    
 
         total_price += price
         print('total_price',total_price)
     return total_price
+
 
 
 
