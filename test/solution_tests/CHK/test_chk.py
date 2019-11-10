@@ -1,7 +1,13 @@
-from solutions.HLO import hello_solution
+from solutions.CHK import checkout_solution
 
 
-class TestSum():
-    def test_sum(self):
-        name = 'John'
-        assert hello_solution.hello(name)=='Hello, {}!'.format(name)
+class TestCheckout():
+    # def test_checkout(self):
+    #     SKUs = 'A B C'
+    #     expected_price = 0
+    #     assert checkout_solution.checkout(SKUs)== expected_price
+
+    def test_illegal_input(self):
+        SKUs = '1'
+        expected_price = -1
+        assert checkout_solution.checkout(SKUs)== expected_price
