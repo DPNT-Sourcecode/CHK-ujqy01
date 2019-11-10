@@ -5,11 +5,10 @@ import string
 # skus = unicode string
 def checkout(skus):
     # alphabet = string.ascii_uppercase
-    alphabet = 'A B C D E F G H I J K L M N O P Q R S T U V W X Y Z'
-    print(alphabet.split())
-    SKUs = skus.split()
+    alphabet = 'A B C D E F G H I J K L M N O P Q R S T U V W X Y Z'.split()
+    skus = skus.split()
+    for sku in skus:
+        if alphabet.get(sku) is None:
+            return -1
 
-    return -1
-
-
-
+    return 0
