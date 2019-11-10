@@ -27,12 +27,14 @@ def checkout(skus):
         if price_list_item is not None:
             if price_list_item.get('on_offer'):
                 on_offer_items_count = skus.count(sku)
-                if on_offer_items_count/price_list_item.get('offer_quantity'):
+                price = on_offer_items_count / price_list_item.get('offer_quantity') * price_list_item.get('offer_price') + on_offer_items_count%price_list_item.get('offer_quantity') * price_list_item.get('price')
 
-        price = 0
+                    
+
         total_price += price
         print('total_price',total_price)
     return total_price
+
 
 
 
