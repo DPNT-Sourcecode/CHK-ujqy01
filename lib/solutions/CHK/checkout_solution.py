@@ -8,7 +8,8 @@ def checkout(skus):
     alphabet = 'A B C D E F G H I J K L M N O P Q R S T U V W X Y Z'.split()
     skus = skus.split()
     for sku in skus:
-        if alphabet.get(sku) is None:
+        if sku not in alphabet:
             return -1
 
     return 0
+
