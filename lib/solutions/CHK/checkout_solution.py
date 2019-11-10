@@ -1,4 +1,5 @@
-import string
+import math
+
 
 
 # noinspection PyUnusedLocal
@@ -27,7 +28,7 @@ def checkout(skus):
         if price_list_item is not None:
             if price_list_item.get('on_offer'):
                 on_offer_items_count = skus.count(sku)
-                offer_price = on_offer_items_count / price_list_item.get('offer_quantity') * price_list_item.get('offer_price')
+                offer_price = math.trunc(on_offer_items_count / price_list_item.get('offer_quantity')) * price_list_item.get('offer_price')
                 non_offer_price = on_offer_items_count%price_list_item.get('offer_quantity') * price_list_item.get('price')
                 print('offer_price',offer_price,'non_offer_price',non_offer_price)
                 price = offer_price + on_offer_items_count%price_list_item.get('offer_quantity') * price_list_item.get('price')
@@ -40,6 +41,7 @@ def checkout(skus):
         total_price += price
         print('total_price',total_price)
     return total_price
+
 
 
 
