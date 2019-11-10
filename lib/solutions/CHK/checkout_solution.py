@@ -24,9 +24,14 @@ def checkout(skus):
 
         if price_list_item is not None:
             if price_list_item.get('on_offer'):
-                price_list_item.get('name')
-                
-
+                on_offer_item_list = []
+                for sku in skus:
+                    if sku == price_list_item.get('name'):
+                        on_offer_item_list.append(sku)
+                        skus.remove(sku)
+                print(on_offer_item_list)
+        price = 0
         total_price += price
         print('total_price',total_price)
     return total_price
+
