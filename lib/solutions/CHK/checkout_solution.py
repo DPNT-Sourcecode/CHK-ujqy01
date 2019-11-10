@@ -30,10 +30,3 @@ def checkout(skus):
             price = price_list_item.get('price',0)
         total_price += price
     return total_price
-
-
-
-
-
-
-

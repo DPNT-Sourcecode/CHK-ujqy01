@@ -16,4 +16,3 @@ class TestCheckout():
         SKUs = '1'
         expected_price = -1
         assert checkout_solution.checkout(SKUs)== expected_price
-
