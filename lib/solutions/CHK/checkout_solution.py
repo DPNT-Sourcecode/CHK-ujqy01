@@ -11,8 +11,10 @@ def checkout(skus):
                   {'name': 'C', 'price': 20,'on_offer': False},
                   {'name': 'D', 'price': 15,'on_offer': False}]
     total_price = 0
-    skus = skus.split().sort()
-    print(skus)
+    skus = skus.split()
+
+    skus.sort()
+   
     count = 0
     for sku in skus:
         if sku not in alphabet:
@@ -28,6 +30,7 @@ def checkout(skus):
             price = price_list_item.get('price',0)
         total_price += price
     return total_price
+
 
 
 
