@@ -13,10 +13,11 @@ def checkout(skus):
                   {'name': 'B', 'price':30,'on_offer': True,'offer_quantity':2,'offer_price':45},
                   {'name': 'C', 'price': 20,'on_offer': False},
                   {'name': 'D', 'price': 15,'on_offer': False}]
+
     offers_list = [{'id':'0','type':'multibuy','offer_item':'A','offer_quantity':3,'offer_price':130},
                    {'id':'1','type':'multibuy','offer_item':'A','offer_quantity':5,'offer_price':200},
                    {'id': '2','type':'multibuy', 'offer_item': 'B', 'offer_quantity': 2, 'offer_price': 45},
-
+                   {'id': '2', 'type': 'multibuy', 'offer_item': 'B', 'offer_quantity': 2, 'offer_price': 45},
                    ]
     total_price = 0
 
@@ -47,4 +48,5 @@ def checkout(skus):
         total_price += price
         print('total_price',total_price)
     return total_price
+
 
