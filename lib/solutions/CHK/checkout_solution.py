@@ -15,7 +15,7 @@ def checkout(skus):
                   {'name': 'D', 'price': 15,'on_offer': False}]
     total_price = 0
 
-    skus = sorted(skus)
+    skus = ''.join(sorted(skus))
 
     count = 0
     offer_item_name = ''
@@ -42,5 +42,6 @@ def checkout(skus):
         total_price += price
         print('total_price',total_price)
     return total_price
+
 
 
