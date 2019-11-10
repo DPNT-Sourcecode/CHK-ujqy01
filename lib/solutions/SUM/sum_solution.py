@@ -1,7 +1,7 @@
 # noinspection PyShadowingBuiltins,PyUnusedLocal
 def compute(x, y):
     if x<0 or x > 100 or y<0 or y>100:
-        raise InputError
+        raise InputError(x,'Input parameter out of bounds')
     return x+y
     # raise NotImplementedError()
 
@@ -21,6 +21,4 @@ class InputError(Error):
 
     def __init__(self, expression, message):
         self.expression = expression
-        self.message = 'Input parameter(s) out of bounds'
-
-
+        self.message = message

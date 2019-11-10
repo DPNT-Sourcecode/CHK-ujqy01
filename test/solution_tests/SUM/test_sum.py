@@ -1,5 +1,5 @@
 from solutions.SUM import sum_solution
-
+import pytest
 
 
 class TestSum():
@@ -7,7 +7,8 @@ class TestSum():
         assert sum_solution.compute(1, 2) == 3
 
     def test_sum_parameter_out_of_bounds(self):
-       self.assertRaises(InputError,sum_solution.compute(101, 2))
+       with pytest.raises(InputError):
+           sum_solution.compute(101, 2)
 
 class Error(Exception):
     """Base class for exceptions in this module."""
@@ -25,4 +26,3 @@ class InputError(Error):
     def __init__(self, expression, message):
         self.expression = expression
         self.message = 'Input parameter(s) out of bounds'
-
