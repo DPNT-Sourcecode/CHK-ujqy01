@@ -9,3 +9,4 @@ class TestSum():
     def test_sum_parameter_out_of_bounds(self):
        with pytest.raises(ValueError):
            sum_solution.compute(101, 2)
+
