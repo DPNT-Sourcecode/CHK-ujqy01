@@ -15,9 +15,9 @@ def checkout(skus):
         price_list_item = next((item for item in price_list if item["name"] == sku), None)
         if price_list_item is not None:
             price = price_list_item.get('price',0)
-        # print(price)
         total_price += price
     return total_price
+
 
 
 
