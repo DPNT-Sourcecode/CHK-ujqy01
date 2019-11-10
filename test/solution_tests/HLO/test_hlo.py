@@ -3,4 +3,5 @@ from solutions.HLO import hello_solution
 
 class TestSum():
     def test_sum(self):
-        assert hello_solution.hello('friend')=='Hello, World!'
+        name = 'John'
+        assert hello_solution.hello(name)=='Hello, {}!'.format(name)
