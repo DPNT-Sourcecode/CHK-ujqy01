@@ -23,11 +23,12 @@ def checkout(skus):
         price_list_item = next((item for item in price_list if item["name"] == sku), None)
 
         if price_list_item is not None:
-            if price_list_item.get('on_offer') and offer_item_name == price_list_item.get('name'):
+            if price_list_item.get('on_offer') and (offer_item_name == price_list_item.get('name') or offer_item_name == "") :
                 count+=1
                 print(price_list_item.get('name'),'is on offer','count=',count)
             else:
                 count = 0
+
             offer_item_name = price_list_item.get('name')
 
             if count == price_list_item.get('offer_quantity'):
@@ -37,7 +38,10 @@ def checkout(skus):
                 count = 0
             else:
                 price = price_list_item.get('price',0)
+
         total_price += price
+        print('total_price',total_price)
     return total_price
+
 
 
