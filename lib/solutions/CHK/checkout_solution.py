@@ -6,18 +6,16 @@ import string
 # skus = unicode string
 def checkout(skus):
     alphabet = string.ascii_uppercase
-    alphabet = alphabet.split()
-    print('')
-    print(alphabet)
+
+
     # alphabet = 'A B C D E F G H I J K L M N O P Q R S T U V W X Y Z'.split()
     price_list = [{'name': 'A', 'price': 50,'on_offer': True,'offer_quantity':3,'offer_price':130},
                   {'name': 'B', 'price':30,'on_offer': True,'offer_quantity':2,'offer_price':45},
                   {'name': 'C', 'price': 20,'on_offer': False},
                   {'name': 'D', 'price': 15,'on_offer': False}]
     total_price = 0
-    skus = skus.split()
 
-    skus.sort()
+    skus = sorted(skus)
 
     count = 0
     offer_item_name = ''
@@ -44,4 +42,5 @@ def checkout(skus):
         total_price += price
         print('total_price',total_price)
     return total_price
+
 
