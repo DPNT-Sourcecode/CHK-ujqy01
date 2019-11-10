@@ -14,7 +14,7 @@ def checkout(skus):
     skus = skus.split()
 
     skus.sort()
-   
+
     count = 0
     for sku in skus:
         if sku not in alphabet:
@@ -24,9 +24,13 @@ def checkout(skus):
         if price_list_item is not None:
             if price_list_item.get('on_offer'):
                 count+=1
+                print(price_list_item.get('name'),'is on offer','count=',count)
             if count == price_list_item.get('offer_quantity'):
+                print('get offer price')
                 price = price_list_item.get('offer_price',0)
                 count =0
-            price = price_list_item.get('price',0)
+            else:
+                price = price_list_item.get('price',0)
         total_price += price
     return total_price
+
