@@ -42,6 +42,3 @@ def checkout(skus):
         total_price += price
         print('total_price',total_price)
     return total_price
-
-
-
