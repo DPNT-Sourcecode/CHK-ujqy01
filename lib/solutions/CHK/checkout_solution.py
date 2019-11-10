@@ -23,11 +23,14 @@ def checkout(skus):
         price_list_item = next((item for item in price_list if item["name"] == sku), None)
 
         if price_list_item is not None:
-            if 
+            if price_list_item.get('on_offer'):
+                price_list_item.get('name')
+                
 
         total_price += price
         print('total_price',total_price)
     return total_price
+
 
 
 
